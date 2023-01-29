@@ -32,7 +32,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: https://github.com/khejm/FM_P9_signup_form.git
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: https://khejm.github.io/FM_P9_signup_form/
 
 ## My process
 

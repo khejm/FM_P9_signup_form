@@ -1,0 +1,340 @@
+/******* Variables *********/
+
+:root {
+
+    /*Primary colors */
+    --clr-primary-1: hsl(0, 100%, 74%);                         /* card background color*/
+    --clr-primary-2: hsl(154, 59%, 51%);                        /*button color*/
+
+    /*Neutral colors */
+    --clr-neutral-1: hsla(0, 0%, 100%);
+    --clr-neutral-2: hsl(249, 10%, 26%);
+    --clr-neutral-3: hsl(246, 25%, 77%);
+
+    /*Accent colors */
+    --clr-accent-1: hsl(248, 33%, 49%);                         /*border input:focus color*/
+    --clr-accent-2: hsla(0, 0%, 87%, 1);                        /*border input color*/
+
+    /*Fonts*/
+    --ff-primary: 'Poppins', sans-serif;
+    --fs-1: 1.1rem;
+    --fs-2: 1.5rem;
+    --fs-4: 2.8rem;
+    --fs-6: 5rem;
+    --clamped-font-size: clamp(var(--fs-4), 3.5vw, var(--fs-6));
+
+    /*Other*/
+    --line-height: 2.6rem;
+    --dark-shadow: 0 .8rem 0 hsla(0, 0%, 0%, 0.15);
+    --light-shadow: inset 0 -0.4rem 0 hsla(0, 0%, 0%, 0.091);     /*button shadow*/
+    --spacing-1: 0.26px;
+    --spacing-2: 1px;                                               /*button letter spacing*/
+    --radius-1: .5rem;                                              /*button radius*/
+    --radius-2: 1rem;
+
+}
+
+/******* Global styles *********/
+
+:root {
+    font-size: 62.5%;
+}
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    display: grid;
+    place-content: center;
+
+    min-height: 100vh;
+    font-family: var(--ff-primary);
+    font-size: 100%;
+
+    background-color: var(--clr-primary-1);
+    background-image: url("images/bg-intro-mobile.png");
+    background-repeat: repeat;
+    background-position: center;
+
+
+    color: var(--clr-neutral-1);
+    line-height: 2.6rem;
+    text-rendering: optimizeSpeed;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 3.6rem;
+}
+
+
+img, picture {
+    display: block;
+    max-width: 100%;
+}
+
+
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+button,
+input {
+    width: 85%;
+    margin-inline: auto;
+    border-radius: var(--radius-1);
+    font-weight: 600;
+}
+
+button {
+    color: var(--clr-neutral-1);
+    background-color: var(--clr-primary-2);
+    border-style: none;
+    box-shadow: var(--light-shadow);
+    font-size: 1.5rem;
+    letter-spacing: var(--spacing-2);
+    margin-bottom: .8rem;
+    padding: 1.5rem 0;
+    text-transform: uppercase;
+}
+
+input {
+    border: 1px solid var(--clr-accent-2);
+    font-size: 1.4rem;
+    outline: none;
+    padding: 1.2rem 0 1.1rem 1.9rem;
+}
+
+input:focus {
+    border-color: var(--clr-accent-1);
+}
+
+main {
+    min-width: 100vw;
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  html {
+    scroll-behavior: initial;
+  }
+ 
+}
+
+
+/******************* Global classes *********************/
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 4.5rem;
+    max-width: 45rem;
+    
+    font-size: 1.6rem;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 3rem;
+    margin-inline: auto;
+}
+
+.container {
+    margin-inline: 2.4rem;
+}
+
+.container + .container {
+    margin-top: 2rem;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.card-title {
+    margin-bottom: 2.4rem;
+
+    font-size: var(--fs-4);
+    font-weight: 700;
+}
+
+.card__trial-info {
+    background-color: var(--clr-accent-1);
+    border-radius: var(--radius-2);
+    box-shadow: var(--dark-shadow);
+    margin-bottom: 2.4rem;
+    padding: 1.8rem 6.6rem;
+
+    font-size: var(--fs-200);
+    font-weight: 400;
+    letter-spacing: var(--spacing-1);
+}
+
+#signup-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  
+    gap: 1.6rem;
+   
+    background-color: var(--clr-neutral-1);
+    color: var(--clr-neutral-2);
+    border-radius: var(--radius-2);
+    box-shadow: var(--dark-shadow);
+    padding: 3rem 0 2.4rem 0;
+}
+
+.visually-hidden {
+    border-width: 0 !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    white-space: nowrap !important;
+    width: 1px !important;
+}
+
+.form-adnotation {
+    color: var(--clr-neutral-3);
+    font-size: 1.1rem;
+    margin-inline: auto;
+    line-height: 2.1rem;
+    width: 75%;
+}
+
+.form-accent {
+    color: var(--clr-primary-1);
+}
+
+.input-container {
+    position: relative;
+}
+
+.error-icon {
+    position: absolute;
+    top: 1.6rem;
+    right: clamp(2rem, 10vw, 5rem);
+    opacity: 0;
+}
+
+.error {
+    position: absolute;
+    padding-top: .5rem;
+    right: clamp(1rem, 10vw, 4rem);
+    color: var(--clr-primary-1);
+    font-size: var(--fs-1);
+    font-style: italic;
+    line-height: 1.6rem;
+}
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+.text-align {
+    text-align: center;
+}
+
+
+@media screen and (min-width: 900px) {
+    body {
+        background-image: url("images/bg-intro-desktop.png");
+    }
+
+    main {
+        padding: 5rem 0;
+    }
+    .card {
+       flex-direction: row;
+       max-width: 110rem;
+       align-items: center;
+       margin-inline: auto;
+       padding: 0 5rem;
+       gap: 4.5rem;
+    }
+    .container {
+        flex: 1;
+        margin-inline: auto;
+    }
+    .text-align {
+        text-align: left;
+    }
+    .card-title {
+        font-size: var(--clamped-font-size);
+    }  
+    .error-icon {
+        right: 4em;
+    } 
+    
+}
+
+@media screen and (min-width: 1000px) {
+    .card {
+        max-width: 120rem;
+        padding: 0rem 3.8rem;
+        padding-bottom: 2.2rem
+    }
+    .card-info-width {
+        width: 95%;
+    }
+    .card-title {
+        line-height: clamp(3.6rem, 4vw, 5.5rem);
+        margin-bottom: 3rem;
+    }  
+
+    #signup-form {
+        gap: 2rem;
+        padding: 4rem 0;
+    }
+
+    #signup-form input {
+        padding: 1.45rem 0 1.45rem 1.9rem;
+    }
+}

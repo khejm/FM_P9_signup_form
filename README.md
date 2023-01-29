@@ -26,7 +26,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./screenshot/P9_signup_form_desktop_view.png)
 
 
 ### Links
